@@ -45,11 +45,32 @@ for (let i=0; i < arrayImages.length; i++) {
     caroselloDOMElement.innerHTML += htmlString
 }
 
-const imageDOMElements = document.getElementsByClassName('image')
+const imageDOMElements = document.getElementsByClassName('image') //imageDOMElement diventa assume le proprietà di un'array
 console.log (imageDOMElements)
 
 const firstImageDOMElement = imageDOMElements[0]
 firstImageDOMElement.classList.add('active')
+
+// richiamo il bottone down dal DOM per creare evento click
+const btnDownDOMElement = document.querySelector('.btn-down')
+console.dir(btnDownDOMElement)
+
+// ciclo for che sposta la classe active da un img all'altra con evento click
+// - creo una variabile che rappresenta l'indice dell'array imageDOMElements
+let indiceImageDOMElements = 0
+
+// evento click down  
+btnDownDOMElement.addEventListener('click',
+function nextImage() {
+    for (k = 0; k < imageDOMElements.length; k++) {
+        // rimuovo la classe active all'img che ha indice 0
+        imageDOMElements[indiceImageDOMElements].classList.remove('active')
+        indiceImageDOMElements += 1
+        console.log(imageDOMElements, indiceImageDOMElements)
+    }
+})
+
+// k = 0
 
 
 
