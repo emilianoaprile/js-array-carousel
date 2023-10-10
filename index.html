@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carosello</title>
+</head>
+<!-- style css -->
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 40px;
+    }
+    .carosello {
+        width: 500px;
+        margin: 0 auto;
+        border: 1px solid red;
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .btn {
+        padding: 5px;
+        width: 40px;
+    }
+
+    .btn-up {
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        transform: translate(-50%);
+    }
+
+    .btn-down {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        transform: translate(-50%);
+    }
+
+</style>
+
+<!-- HTML -->
+<body>
+
+    <div class="carosello">
+        <button class="btn btn-up">&UpArrow;</button>
+        <img src="./img/01.webp" alt="">
+        <button class="btn btn-down">&DownArrow;</button>
+    </div>
+
+    <!-- javascript -->
+    <script src="./js/myscript.js"></script>
+</body>
+</html>
