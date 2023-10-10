@@ -39,10 +39,18 @@ for (let i=0; i < arrayImages.length; i++) {
 
     // creo una concatenazione di un template literal
     const htmlString = `
-        <img src="${srcCorrente}">
+        <img class="image" src="${srcCorrente}">
     `
     console.log(htmlString)
     caroselloDOMElement.innerHTML += htmlString
 }
+
+const imageDOMElements = document.getElementsByClassName('image')
+console.log (imageDOMElements)
+
+const firstImageDOMElement = imageDOMElements[0]
+firstImageDOMElement.classList.add('active')
+
+
 
 
