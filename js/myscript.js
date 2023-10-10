@@ -12,3 +12,37 @@
 // - Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente:
 //     - aggiungo un elemento button nell'html e lo richiamo su js 
 //     - aggiungo l'evento click all'elemento preso dal DOM
+// --------------------------------------------------------------------------------- //
+
+// - inseriamo tutte le immagini dinamicamente servendoci dell’array
+
+const arrayImages = [
+    'img/01.webp',
+    'img/02.webp',
+    'img/03.webp',
+    'img/04.webp',
+    'img/05.webp'
+]
+console.log(arrayImages)
+
+// - CREO UN CICLO FOR CHE CONCATENA UN TAMPLATE LITERAL:
+// - richiamo il div carosello dal DOM
+const caroselloDOMElement = document.querySelector('.carosello')
+console.dir(caroselloDOMElement)
+// ciclo for
+for (let i=0; i < arrayImages.length; i++) {
+    // console.log(i)
+    
+    // assegno alla variabile srcCorrente il valore degli indici array
+    const srcCorrente = arrayImages[i]
+    console.log(srcCorrente)
+
+    // creo una concatenazione di un template literal
+    const htmlString = `
+        <img src="${srcCorrente}">
+    `
+    console.log(htmlString)
+    caroselloDOMElement.innerHTML += htmlString
+}
+
+
