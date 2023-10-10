@@ -48,6 +48,7 @@ for (let i=0; i < arrayImages.length; i++) {
 const imageDOMElements = document.getElementsByClassName('image') //imageDOMElement diventa assume le proprietà di un'array
 console.log (imageDOMElements)
 
+// assegno all'indice zero la classe active
 const firstImageDOMElement = imageDOMElements[0]
 firstImageDOMElement.classList.add('active')
 
@@ -55,22 +56,21 @@ firstImageDOMElement.classList.add('active')
 const btnDownDOMElement = document.querySelector('.btn-down')
 console.dir(btnDownDOMElement)
 
-// ciclo for che sposta la classe active da un img all'altra con evento click
-// - creo una variabile che rappresenta l'indice dell'array imageDOMElements
+// creo una variabile che rappresenta l'indice dell'array imageDOMElements
 let indiceImageDOMElements = 0
 
 // evento click down  
 btnDownDOMElement.addEventListener('click',
-function nextImage() {
-    for (k = 0; k < imageDOMElements.length; k++) {
+function() {
+    // ciclo for che sposta la classe active da un img all'altra con evento click
+    for (let k = 0; k < imageDOMElements.length; k++) {
+        console.log(k)
         // rimuovo la classe active all'img che ha indice 0
         imageDOMElements[indiceImageDOMElements].classList.remove('active')
-        indiceImageDOMElements += 1
-        console.log(imageDOMElements, indiceImageDOMElements)
+        imageDOMElements[indiceImageDOMElements + 1].classList.add('active')
     }
 })
 
-// k = 0
 
 
 
