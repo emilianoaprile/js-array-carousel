@@ -69,7 +69,7 @@ btnDownDOMElement.addEventListener('click',
 
         indiceImageDOMElements++
 
-        if (indiceImageDOMElements >= indiceImageDOMElements.length) {
+        if (indiceImageDOMElements >= imageDOMElements.length) {
             indiceImageDOMElements = 0
         }
 
