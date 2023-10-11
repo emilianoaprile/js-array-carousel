@@ -30,9 +30,9 @@ console.log(arrayImages)
 const caroselloDOMElement = document.querySelector('.carosello')
 console.dir(caroselloDOMElement)
 // ciclo for
-for (let i=0; i < arrayImages.length; i++) {
+for (let i = 0; i < arrayImages.length; i++) {
     // console.log(i)
-    
+
     // assegno alla variabile srcCorrente il valore degli indici array
     const srcCorrente = arrayImages[i]
     console.log(srcCorrente)
@@ -48,7 +48,6 @@ for (let i=0; i < arrayImages.length; i++) {
 const imageDOMElements = document.getElementsByClassName('image') //imageDOMElement diventa assume le proprietà di un'array
 console.log (imageDOMElements)
 
-// assegno all'indice zero la classe active
 const firstImageDOMElement = imageDOMElements[0]
 firstImageDOMElement.classList.add('active')
 
@@ -56,22 +55,29 @@ firstImageDOMElement.classList.add('active')
 const btnDownDOMElement = document.querySelector('.btn-down')
 console.dir(btnDownDOMElement)
 
-// creo una variabile che rappresenta l'indice dell'array imageDOMElements
+// ciclo for che sposta la classe active da un img all'altra con evento click
+// - creo una variabile che rappresenta l'indice dell'array imageDOMElements
 let indiceImageDOMElements = 0
 
 // evento click down  
 btnDownDOMElement.addEventListener('click',
-function() {
-    // ciclo for che sposta la classe active da un img all'altra con evento click
-    for (let k = 0; k < imageDOMElements.length; k++) {
-        console.log(k)
-        // rimuovo la classe active all'img che ha indice 0
+    function downClick() {
+
+        // prova senza ciclo for
+
         imageDOMElements[indiceImageDOMElements].classList.remove('active')
-        imageDOMElements[indiceImageDOMElements + 1].classList.add('active')
-    }
-})
+
+        indiceImageDOMElements++
+
+        if (indiceImageDOMElements >= indiceImageDOMElements.length) {
+            indiceImageDOMElements = 0
+        }
+
+        imageDOMElements[indiceImageDOMElements].classList.add('active')
+
+    })
 
 
 
 
-
+    
