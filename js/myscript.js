@@ -51,9 +51,12 @@ console.log (imageDOMElements)
 const firstImageDOMElement = imageDOMElements[0]
 firstImageDOMElement.classList.add('active')
 
-// richiamo il bottone down dal DOM per creare evento click
+// richiamo il bottone down e up dal DOM per creare evento click
 const btnDownDOMElement = document.querySelector('.btn-down')
 console.dir(btnDownDOMElement)
+
+const btnUpDOMElement = document.querySelector('.btn-up')
+console.dir(btnUpDOMElement)
 
 // ciclo for che sposta la classe active da un img all'altra con evento click
 // - creo una variabile che rappresenta l'indice dell'array imageDOMElements
@@ -76,6 +79,24 @@ btnDownDOMElement.addEventListener('click',
         imageDOMElements[indiceImageDOMElements].classList.add('active')
 
     })
+
+    // evento click up
+btnUpDOMElement.addEventListener('click',
+function upClick() {
+
+    // prova senza ciclo for
+
+    imageDOMElements[indiceImageDOMElements].classList.remove('active')
+
+    indiceImageDOMElements++
+
+    if (indiceImageDOMElements >= imageDOMElements.length) {
+        indiceImageDOMElements = 0
+    }
+
+    imageDOMElements[indiceImageDOMElements].classList.add('active')
+
+})
 
 
 
