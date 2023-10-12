@@ -88,16 +88,13 @@ function upClick() {
 
     imageDOMElements[indiceImageDOMElements].classList.remove('active')
 
+    if (indiceImageDOMElements === 0 ) {
+        indiceImageDOMElements = imageDOMElements.length 
+    }
     indiceImageDOMElements--
 
-    if (indiceImageDOMElements >= imageDOMElements.length) {
-        indiceImageDOMElements = 0
-    }
-
     imageDOMElements[indiceImageDOMElements].classList.add('active')
-
 })
-
 
 
 
